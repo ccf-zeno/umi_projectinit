@@ -6,6 +6,7 @@
     "test": "umi test",
     "eslint": "eslint --fix --ext .js src ",
     "prettier": "prettier --write {src}/**/*.{js,css,less}",
+    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
     "precommit": "lint-staged"
   },
   "dependencies": {
@@ -37,11 +38,6 @@
       "npm run prettier",
       "git add"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
   },
   "engines": {
     "node": ">=8.0.0"
