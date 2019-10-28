@@ -34,6 +34,7 @@
   },
   "lint-staged": {
     "*.{js,jsx}": [
+      "npm run commit-msg",
       "npm run eslint",
       "npm run prettier",
       "git add"
