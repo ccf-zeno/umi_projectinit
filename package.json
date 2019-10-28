@@ -6,7 +6,6 @@
     "test": "umi test",
     "eslint": "eslint --fix --ext .js src ",
     "prettier": "prettier --write {src}/**/*.{js,css,less}",
-    "commit-msg": "commitlint -E GIT_PARAMS",
     "precommit": "lint-staged"
   },
   "dependencies": {
@@ -16,6 +15,8 @@
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
     "babel-eslint": "^9.0.0",
     "eslint": "^5.4.0",
     "eslint-config-umi": "^1.4.0",
@@ -36,6 +37,11 @@
       "npm run prettier",
       "git add"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   },
   "engines": {
     "node": ">=8.0.0"
