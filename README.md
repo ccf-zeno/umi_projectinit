@@ -14,12 +14,12 @@
 用feMicroService包起来，这样可以不污染使用者的配置文件；
 用xxxApi区分不同微服务，可以有效防止引入多个微服务造成的字段重复冲突；
 ***
-# 最基数的umi框架
-集成
-eslint      代码检测工具  
-prettier    代码格式化  
-commitlint  commit检测工具  
-config/     配置文件目录  
+# 最基础的umi框架
+集成  
+eslint---------代码检测工具  
+prettier-------代码格式化  
+commitlint-----commit检测工具  
+config/--------配置文件目录  
 # 打包做微服务运行
 gitlab 找 websever 。
 # 打包做npm包
