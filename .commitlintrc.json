@@ -1,6 +1,6 @@
 {
     "extends": [
-        "@commitlint/config-angular"
+        "@commitlint/config-conventional"
     ],
     "rules": {
         "type-enum": [
@@ -19,10 +19,6 @@
                 "chore",
                 "revert"
             ]
-        ],
-        "scope-empty": [
-            2,
-            "never"
         ],
         "subject-full-stop": [
             0,

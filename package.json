@@ -6,7 +6,7 @@
     "test": "umi test",
     "eslint": "eslint --fix --ext .js src ",
     "prettier": "prettier --write {src}/**/*.{js,css,less}",
-    "commit-msg": "commitlint -E $GIT_PARAMS",
+    "commitmsg": "commitlint -E GIT_PARAMS",
     "precommit": "lint-staged"
   },
   "dependencies": {
@@ -38,11 +38,6 @@
       "npm run prettier",
       "git add"
     ]
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-customizable"
-    }
   },
   "engines": {
     "node": ">=8.0.0"
