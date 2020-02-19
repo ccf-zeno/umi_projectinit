@@ -7,7 +7,7 @@
     "eslint": "eslint --fix --ext .js src ",
     "prettier": "prettier --write {src}/**/*.{js,css,less}",
     "commitmsg": "commitlint -E GIT_PARAMS",
-    "precommit": "lint-staged"
+    "precommit": "npm run eslint"
   },
   "dependencies": {
     "dva": "^2.6.0-beta.6",
