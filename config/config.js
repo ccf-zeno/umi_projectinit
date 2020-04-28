@@ -1,40 +1,26 @@
-/* eslint-disable */
-import routes from "./router.config";
+import { defineConfig } from 'umi';
+import routes from "./router";
+import globalConfig from "./globalConfig";
 
-const path = require("path");
-const localconfig = require("./local.config");
-const rootdir = path.join(__dirname, "..");
+const path = require('path');
+const rootdir = path.join(__dirname, '..');
 
-export default {
-  treeShaking: true,
-  targets: {
-    ie: 10, // 兼容ie10
+export default defineConfig({
+  nodeModulesTransform: { // node_modules 编译方式
+    type: 'none',
   },
-  outputPath: "/dist", // 打包目录
-  define: {
-    "process.config": localconfig, // 暴露全局变量
+  routes,
+  hash: true, // 让生成的文件包含 hash 后缀
+  define:{
+    globalConfig,
   },
-  disableRedirectHoist: true, // 禁止重定向上提
-  alias: {
-    // 配置自定义快捷引入文件路径
-    "@components": path.resolve(rootdir, "src/components/"),
-    "@utils": path.resolve(rootdir, "src/utils/"),
-    "@assets": path.resolve(rootdir, "src/assets"),
-    "@services": path.resolve(rootdir, "src/services/"),
-    "@config": path.resolve(rootdir, "config/"),
+  devServer:{ 
+    port:12133,
   },
-  routes, // 路由
-  plugins: [
-    // 插件
-    [
-      "umi-plugin-react",
-      {
-        antd: false,
-        dva: true,
-        dynamicImport: false,
-        title: "系统标题",
-        dll: false,
-      },
-    ],
-  ],
-};
+  alias:{
+    '@components': path.resolve(rootdir, 'src/components/'),
+    '@utils': path.resolve(rootdir, 'src/utils/'),
+    '@assets': path.resolve(rootdir, 'src/assets/'),
+    '@services': path.resolve(rootdir, 'src/services/'),
+  },
+});

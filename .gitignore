@@ -6,30 +6,21 @@
 /yarn-error.log
 /yarn.lock
 /package-lock.json
-server/node_modules
-server/npm-debug.log*
-server/yarn-error.log
-server/yarn.lock
-server/package-lock.json
-server/config
-server/env
+/dist
 
 # production
 /dist
-server/dist
-server/config
-es/
 
 # misc
 .DS_Store
 
 # umi
-.umi
-.umi-production
-/node_modules
+/src/.umi
+/src/.umi-production
+/src/.umi-test
+/.env.local
 
-# other
-.vscode
-.idea
+# 其他
 .history
-.temp
+.idea
+.vscode

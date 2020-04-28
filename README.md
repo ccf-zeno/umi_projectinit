@@ -20,7 +20,7 @@ eslint---------代码检测工具
 prettier-------代码格式化  
 commitlint-----commit检测工具  
 config/--------配置文件目录  
-# 打包做微服务运行
-gitlab 找 websever 。
-# 打包做npm包
-gitlab 找 hz-package 。
+
+
+# 更新说明：
+2020 4 27：更新UMI3X版本,ANTD4X版本全部切换到最新
