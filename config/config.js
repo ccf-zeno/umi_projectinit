@@ -18,9 +18,9 @@ export default defineConfig({
     port:12133,
   },
   alias:{
-    '@components': path.resolve(rootdir, 'src/components/'),
-    '@utils': path.resolve(rootdir, 'src/utils/'),
-    '@assets': path.resolve(rootdir, 'src/assets/'),
-    '@services': path.resolve(rootdir, 'src/services/'),
+    '@components': path.resolve(rootdir, 'src/components'),
+    '@utils': path.resolve(rootdir, 'src/utils'),
+    '@assets': path.resolve(rootdir, 'src/assets'),
+    '@services': path.resolve(rootdir, 'src/services'),
   },
 });
