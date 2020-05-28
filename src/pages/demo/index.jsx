@@ -1,10 +1,13 @@
-import React from 'react';
-import { Skeleton } from "antd";
+import React from 'react'
 
-export default () => {
+const a=1;
+const Demo = () => {
   return (
     <div>
-      <Skeleton />
+      
     </div>
-  );
+  )
 }
+
+export default Demo;
+

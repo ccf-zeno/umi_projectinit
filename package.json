@@ -6,7 +6,8 @@
     "postinstall": "umi generate tmp",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test",
-    "test:coverage": "umi-test --coverage"
+    "test:coverage": "umi-test --coverage",
+    "eslint": "eslint --ext .js,.jsx src"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
@@ -17,6 +18,9 @@
     ],
     "*.ts?(x)": [
       "prettier --parser=typescript --write"
+    ],
+    "*.{js,jsx}": [
+      "npm run eslint"
     ]
   },
   "dependencies": {
@@ -34,6 +38,8 @@
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.19.0",
+    "eslint-config-airbnb": "18.1.0",
+    "eslint-config-prettier": "6.11.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.0.7",
     "prettier": "^1.19.1"
