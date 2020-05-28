@@ -1,5 +1,5 @@
-export default [
+ export default [
   {
-    path: '/', component: '@/pages/index',
+    path: '/', component: '@/pages/demo',
   }
 ];
