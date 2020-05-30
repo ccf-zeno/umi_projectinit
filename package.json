@@ -4,24 +4,10 @@
     "start": "umi dev",
     "build": "umi build",
     "postinstall": "umi generate tmp",
-    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "prettier": "prettier --write src/**/*.{js,jsx,tsx,ts,less,md,json}",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage",
     "eslint": "eslint --ext .js,.jsx src"
-  },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
-  "lint-staged": {
-    "*.{js,jsx,less,md,json}": [
-      "prettier --write"
-    ],
-    "*.ts?(x)": [
-      "prettier --parser=typescript --write"
-    ],
-    "*.{js,jsx}": [
-      "npm run eslint"
-    ]
   },
   "dependencies": {
     "@umijs/preset-react": "1.x",
@@ -42,6 +28,11 @@
     "eslint-config-prettier": "6.11.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.0.7",
+    "pre-commit": "1.2.2",
     "prettier": "^1.19.1"
-  }
+  },
+  "pre-commit": [
+    "eslint",
+    "prettier"
+  ]
 }
