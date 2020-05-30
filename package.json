@@ -31,11 +31,18 @@
     "pre-commit": "1.2.2",
     "prettier": "^1.19.1"
   },
-  "pre-commit": [
-    "eslint",
-    "prettier"
-  ],
-  "lint-staged":{
-    "*":["git add ."]
+  "husky": {
+    "hooks": {
+      "pre-commit": [
+        "lint-staged"
+      ]
+    }
+  },
+  "lint-staged": {
+    "src/*.{js,jsx,ts,tsx}":"eslint",
+    "src/**/*.{js,jsx,tsx,ts,less,md,json}":"prettier",
+    "*": [
+      "git add"
+    ]
   }
 }
