@@ -3,10 +3,7 @@
   "scripts": {
     "start": "umi dev",
     "build": "umi build",
-    "postinstall": "umi generate tmp",
     "prettier": "prettier --write src/**/*.{js,jsx,tsx,ts,less,md,json}",
-    "test": "umi-test",
-    "test:coverage": "umi-test --coverage",
     "eslint": "eslint --ext .js,.jsx src"
   },
   "dependencies": {
@@ -39,8 +36,8 @@
     }
   },
   "lint-staged": {
-    "src/**/*.jsx": [
-      "eslint --fix --ext .js",
+    "src/**/*.{js,jsx,ts,tsx,less,css}": [
+      "eslint --fix --ext .js,.jsx,.ts,.tsx",
       "prettier --write",
       "git add"
     ]
