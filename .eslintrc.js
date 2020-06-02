@@ -10,6 +10,7 @@ module.exports = {
         'prettier', 
         'prettier/react',
     ],
+    "parser": "babel-eslint",
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
@@ -55,5 +56,10 @@ module.exports = {
         'react/no-find-dom-node': 0,
         'linebreak-style': 0,
         'no-unused-expressions': 0,
+        "consistent-return":0,
+        "global-require":0,
+        "react/no-unused-state":0,
+        'no-restricted-syntax':0,
     }
-};
+  };
+  
