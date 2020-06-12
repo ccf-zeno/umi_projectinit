@@ -15,14 +15,13 @@
     "lodash": "^4.17.15"
   },
   "devDependencies": {
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb": "18.1.0",
-    "eslint-config-prettier": "6.11.0",
-    "eslint-config-umi": "^1.6.0",
-    "eslint-plugin-flowtype": "^4.7.0",
-    "eslint-plugin-import": "^2.20.2",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^2.21.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4.0.4",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.7",
     "pre-commit": "1.2.2",
@@ -36,7 +35,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,less,css}": [
+    "src/**/*.{js,jsx,ts,tsx}": [
       "eslint --ext .js,.jsx,.ts,.tsx",
       "prettier --write"
     ]

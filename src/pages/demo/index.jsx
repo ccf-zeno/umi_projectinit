@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Demo = () => {
-  return <div>xxx</div>;
-};
+export default class index extends Component {
+  changeState = (obj, callback = () => {}) => {
+    this.setState(obj, callback);
+  };
 
-export default Demo;
+  render() {
+    return <div>xxc</div>;
+  }
+}
