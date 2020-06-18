@@ -1,18 +1,18 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: './components.js', // 入口js文件
   output: {
     filename: 'index.js', // 输出的名字
     path: path.resolve(__dirname, 'dist'), // 输出的目录
-    library:'test',
+    library: 'test',
     libraryTarget: 'umd',
     umdNamedDefine: true,
     libraryExport: 'default', // 兼容 ES6 的模块系统、CommonJS 和 AMD 模块规范
   },
-  resolve:{
+  resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
       components: path.resolve(__dirname, 'src/components'),
@@ -40,24 +40,24 @@ module.exports = {
                     },
                   },
                 ],
-                '@babel/preset-react' 
+                '@babel/preset-react',
               ],
-              plugins:[
-                ["@babel/plugin-proposal-decorators", { "legacy": true }],
-                ["@babel/plugin-proposal-class-properties"],
-              ]
+              plugins: [
+                ['@babel/plugin-proposal-decorators', { legacy: true }],
+                ['@babel/plugin-proposal-class-properties'],
+              ],
             },
           },
         ],
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader,
-          "css-loader",   // 纯css文件不做任何标识符的引入
+          'css-loader', // 纯css文件不做任何标识符的引入
           'postcss-loader',
-        ],  
+        ],
       },
       {
         test: /\.less/,
@@ -68,19 +68,19 @@ module.exports = {
             options: {
               modules: {
                 localIdentName: '[path][name]-components-[hash:base64]',
-              }
-            }
+              },
+            },
           },
           'postcss-loader',
           {
             loader: 'less-loader',
-            options: { 
+            options: {
               lessOptions: {
-                javascriptEnabled:true,
+                javascriptEnabled: true,
                 modifyVars: {
-                  hack: `true; @import "~@hz-design/base/es/themes/default.less";`, //  把特殊的less文件引入
-                },  
-              } ,
+                  hack: 'true; @import "~@hz-design/base/es/themes/default.less";', // 把特殊的less文件引入
+                },
+              },
             },
           },
         ],
@@ -91,32 +91,32 @@ module.exports = {
           {
             loader: 'url-loader',
             options: {
-              limit: 10240,   // 单位为字节
-              outputPath: 'assets/'
-            }
-          }
+              limit: 10240, // 单位为字节
+              outputPath: 'assets/',
+            },
+          },
         ],
-      }
-    ]
+      },
+    ],
   },
   plugins: [
-    new MiniCssExtractPlugin({  // css分离
-      filename: 'css/index.css'
+    new MiniCssExtractPlugin({ // css分离
+      filename: 'index.css',
     }),
     new CleanWebpackPlugin(), // 清空打包目录
   ],
   externals: { // 定义外部依赖，避免把react和react-dom打包进去
     react: {
-      root: "React",
-      commonjs2: "react",
-      commonjs: "react",
-      amd: "react"
+      root: 'React',
+      commonjs2: 'react',
+      commonjs: 'react',
+      amd: 'react',
     },
-    "react-dom": {
-      root: "ReactDOM",
-      commonjs2: "react-dom",
-      commonjs: "react-dom",
-      amd: "react-dom"
-    }
+    'react-dom': {
+      root: 'ReactDOM',
+      commonjs2: 'react-dom',
+      commonjs: 'react-dom',
+      amd: 'react-dom',
+    },
   },
-};
+}
