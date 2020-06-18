@@ -12,6 +12,17 @@ module.exports = {
     umdNamedDefine: true,
     libraryExport: 'default', // 兼容 ES6 的模块系统、CommonJS 和 AMD 模块规范
   },
+  resolve:{
+    extensions: ['.js', '.jsx'],
+    alias: {
+      components: path.resolve(__dirname, 'src/components'),
+      utils: path.resolve(__dirname, 'src/utils'),
+      assets: path.resolve(__dirname, 'src/assets'),
+      services: path.resolve(__dirname, 'src/services'),
+      src: path.resolve(__dirname, 'src'),
+      '@': path.resolve(__dirname, 'src/'),
+    },
+  },
   module: {
     rules: [
       {
@@ -29,7 +40,11 @@ module.exports = {
                     },
                   },
                 ],
-                '@babel/preset-react'
+                '@babel/preset-react' 
+              ],
+              plugins:[
+                ["@babel/plugin-proposal-decorators", { "legacy": true }],
+                ["@babel/plugin-proposal-class-properties"],
               ]
             },
           },
@@ -42,8 +57,7 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           "css-loader",   // 纯css文件不做任何标识符的引入
           'postcss-loader',
-        ],
-        exclude: /node_modules/
+        ],  
       },
       {
         test: /\.less/,
@@ -58,9 +72,18 @@ module.exports = {
             }
           },
           'postcss-loader',
-          'less-loader'
+          {
+            loader: 'less-loader',
+            options: { 
+              lessOptions: {
+                javascriptEnabled:true,
+                modifyVars: {
+                  hack: `true; @import "~@hz-design/base/es/themes/default.less";`, //  把特殊的less文件引入
+                },  
+              } ,
+            },
+          },
         ],
-        exclude: /node_modules/
       },
       {
         test: /\.(png|jpg|gif|svg)/,

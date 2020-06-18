@@ -2,3 +2,5 @@
 
 // eslint-disable-next-line
 window.config = globalConfig;
+
+import '@hz-design/base';
