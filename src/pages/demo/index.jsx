@@ -4,6 +4,7 @@ export default class index extends Component {
     this.setState(obj,callback);
   };
   render() {
+    const a=1;
     return <div>xxc</div>;
   }
 }
