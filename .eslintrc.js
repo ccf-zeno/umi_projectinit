@@ -17,6 +17,7 @@ module.exports = {
   },
   plugins: [
     'react',
+    'prettier',
   ],
   parser: 'babel-eslint',
   rules: {
@@ -24,5 +25,6 @@ module.exports = {
     'no-restricted-syntax': 0,
     'keyword-spacing': 0,
     'no-console': 0,
+    'prettier/prettier': 'error',
   },
 };
